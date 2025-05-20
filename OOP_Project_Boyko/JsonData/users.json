@@ -1,0 +1,20 @@
+[
+  {
+    "$type": "Administrator",
+    "UserType": "Admin",
+    "Username": "admin",
+    "Password": "admin"
+  },
+  {
+    "$type": "RegularUser",
+    "UserType": "Regular user",
+    "Username": "user",
+    "Password": "user"
+  },
+  {
+    "$type": "RegularUser",
+    "UserType": "Regular user",
+    "Username": "user1",
+    "Password": "user1"
+  }
+]

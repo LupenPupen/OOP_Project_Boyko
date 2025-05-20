@@ -1,0 +1,14 @@
+[
+  {
+    "UserName": "user1",
+    "TransportName": "Speedster mk1 1989",
+    "Type": "Bicycle",
+    "Hours": 3,
+    "TotalCost": 180,
+    "FullName": "Name",
+    "PhoneNumber": "380000000000000",
+    "CardNumber": "1234123412341234",
+    "ExpiryDate": "01.01",
+    "Cvv": "123"
+  }
+]
