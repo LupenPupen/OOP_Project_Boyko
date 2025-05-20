@@ -66,7 +66,7 @@ Main Menu
 
 ![image](https://github.com/user-attachments/assets/fac0f4b7-0e0b-4eba-9e7a-f73acfa88c9f)
 
-Rent Menu
+Payment Menu
 
 ![image](https://github.com/user-attachments/assets/657133ab-3839-482b-ae22-a28bb34ca121)
 
