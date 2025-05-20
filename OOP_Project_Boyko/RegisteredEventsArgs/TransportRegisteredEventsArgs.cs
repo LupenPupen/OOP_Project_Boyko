@@ -12,7 +12,7 @@ namespace OOP_Project_Boyko.RegisteredEventsArgs
         public Transport RegisteredTransport { get; }
         public TransportRegisteredEventArgs(Transport transport)
         {
-            throw new NotImplementedException();
+            RegisteredTransport = transport;
         }
     }
 }

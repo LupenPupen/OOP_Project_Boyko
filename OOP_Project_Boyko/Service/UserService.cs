@@ -22,12 +22,15 @@ namespace OOP_Project_Boyko.Service
 
         public void AddUser(BaseUser user)
         {
-            throw new NotImplementedException();
+            if (user == null) return;
+            Users.Add(user);
+            UserRegistered?.Invoke(this, new UserRegisteredEventArgs(user));
         }
 
         public void RemoveUser(BaseUser user)
         {
-            throw new NotImplementedException();
+            if (user == null) return;
+            Users.Remove(user);
         }
     }
 }

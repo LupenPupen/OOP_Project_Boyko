@@ -12,7 +12,7 @@ namespace OOP_Project_Boyko.RegisteredEventsArgs
         public BaseUser RegisteredUser { get; }
         public UserRegisteredEventArgs(BaseUser user)
         {
-            throw new NotImplementedException();
+            RegisteredUser = user;
         }
     }
 }

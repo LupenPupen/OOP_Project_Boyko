@@ -19,9 +19,9 @@ namespace OOP_Project_Boyko.Data
     {
         // Внедряемый провайдер данных (по умолчанию — файловый)
         public static IDataProvider DataProvider { get; set; } = new FileDataProvider(
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\OOP_Project_Boyko\\JsonData\\users.json",
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\OOP_Project_Boyko\\JsonData\\transports.json",
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\OOP_Project_Boyko\\JsonData\\rentals.json"
+            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\users.json",
+            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\transports.json",
+            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\rentals.json"
         );
 
         public static ObservableCollection<BaseUser> Users { get; set; } = new ObservableCollection<BaseUser>();
@@ -36,7 +36,18 @@ namespace OOP_Project_Boyko.Data
         /// </summary>
         public static void LoadData()
         {
-            throw new NotImplementedException();
+            if (DataProvider == null)
+                throw new InvalidOperationException("DataProvider is not set.");
+
+            Users = DataProvider.LoadUsers();
+            Transports = DataProvider.LoadTransports();
+            Rentals = DataProvider.LoadRentals();
+
+            // Гарантируем наличие администратора
+            if (!Users.OfType<Administrator>().Any(u => u.Username == "admin"))
+                Users.Add(new Administrator("admin", "admin"));
+
+            OnDataLoaded();
         }
 
         /// <summary>
@@ -44,17 +55,24 @@ namespace OOP_Project_Boyko.Data
         /// </summary>
         public static void SaveData()
         {
-            throw new NotImplementedException();
+            if (DataProvider == null)
+                throw new InvalidOperationException("DataProvider is not set.");
+
+            DataProvider.SaveUsers(Users);
+            DataProvider.SaveTransports(Transports);
+            DataProvider.SaveRentals(Rentals);
+
+            OnDataSaved();
         }
 
         private static void OnDataLoaded()
         {
-            throw new NotImplementedException();
+            DataLoaded?.Invoke(null, EventArgs.Empty);
         }
 
         private static void OnDataSaved()
         {
-            throw new NotImplementedException();
+            DataSaved?.Invoke(null, EventArgs.Empty);
         }
     }
 }

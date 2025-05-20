@@ -10,11 +10,12 @@ namespace OOP_Project_Boyko.Users
         private string _username;
         private string _password;
 
-        public BaseUser() { throw new NotImplementedException(); }
+        public BaseUser() { }
 
         public BaseUser(string username, string password)
         {
-            throw new NotImplementedException();
+            Username = username;
+            Password = password;
         }
 
         public string Username
@@ -22,7 +23,9 @@ namespace OOP_Project_Boyko.Users
             get => _username;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Username cannot be empty.");
+                _username = value;
             }
         }
 
@@ -31,7 +34,9 @@ namespace OOP_Project_Boyko.Users
             get => _password;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Password cannot be empty.");
+                _password = value;
             }
         }
 
@@ -40,7 +45,7 @@ namespace OOP_Project_Boyko.Users
 
         public virtual string GetGreeting()
         {
-            throw new NotImplementedException();
+            return $"Hello, {Username}!";
         }
     }
 }

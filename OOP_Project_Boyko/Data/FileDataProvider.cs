@@ -27,32 +27,80 @@ namespace OOP_Project_Boyko.Data
 
         public ObservableCollection<BaseUser> LoadUsers()
         {
-            throw new NotImplementedException();
+            if (!File.Exists(usersFile))
+                return new ObservableCollection<BaseUser>();
+
+            var json = File.ReadAllText(usersFile);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            return JsonSerializer.Deserialize<ObservableCollection<BaseUser>>(json, options)
+                   ?? new ObservableCollection<BaseUser>();
         }
 
         public void SaveUsers(ObservableCollection<BaseUser> users)
         {
-            throw new NotImplementedException();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            var json = JsonSerializer.Serialize(users, options);
+            File.WriteAllText(usersFile, json);
         }
 
         public ObservableCollection<Transport> LoadTransports()
         {
-            throw new NotImplementedException();
+            if (!File.Exists(transportsFile))
+                return new ObservableCollection<Transport>();
+
+            var json = File.ReadAllText(transportsFile);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            return JsonSerializer.Deserialize<ObservableCollection<Transport>>(json, options)
+                   ?? new ObservableCollection<Transport>();
         }
 
         public void SaveTransports(ObservableCollection<Transport> transports)
         {
-            throw new NotImplementedException();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            var json = JsonSerializer.Serialize(transports, options);
+            File.WriteAllText(transportsFile, json);
         }
 
         public ObservableCollection<Rental> LoadRentals()
         {
-            throw new NotImplementedException();
+            if (!File.Exists(rentalsFile))
+                return new ObservableCollection<Rental>();
+
+            var json = File.ReadAllText(rentalsFile);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            return JsonSerializer.Deserialize<ObservableCollection<Rental>>(json, options)
+                   ?? new ObservableCollection<Rental>();
         }
 
         public void SaveRentals(ObservableCollection<Rental> rentals)
         {
-            throw new NotImplementedException();
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
+            };
+            var json = JsonSerializer.Serialize(rentals, options);
+            File.WriteAllText(rentalsFile, json);
         }
     }
 }

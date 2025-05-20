@@ -14,12 +14,23 @@ namespace OOP_Project_Boyko.Service
     {
         public double CalculateTotalCost(Transport transport, int hours)
         {
-            throw new NotImplementedException();
+            return transport.PricePerHour * hours;
         }
 
         public Rental CreateRental(BaseUser user, Transport transport, PaymentData data, double totalCost)
         {
-            throw new NotImplementedException();
+            return new Rental(
+                user.Username,
+                transport.Name,
+                transport.Type,
+                data.Hours,
+                totalCost,
+                data.FullName,
+                data.PhoneNumber,
+                data.CardNumber,
+                data.ExpiryDate,
+                data.Cvv
+            );
         }
     }
 }

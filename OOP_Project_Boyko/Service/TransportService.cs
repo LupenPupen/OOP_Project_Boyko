@@ -23,17 +23,23 @@ namespace OOP_Project_Boyko.Service
 
         public void AddTransport(Transport transport)
         {
-            throw new NotImplementedException();
+            if (transport == null) return;
+            Transport.Add(transport);
+            TransportRegistered?.Invoke(this, new TransportRegisteredEventArgs(transport));
         }
 
         public void RemoveTransport(Transport transport)
         {
-            throw new NotImplementedException();
+            if (transport == null) return;
+            Transport.Remove(transport);
         }
 
         public Transport FindBestFreeTransport(TransportType type)
         {
-            throw new NotImplementedException();
+            return Transport
+                .Where(t => t.Type == type && t.Status == TransportStatus.Free)
+                .OrderByDescending(t => t.QualityCoef)
+                .FirstOrDefault();
         }
     }
 }

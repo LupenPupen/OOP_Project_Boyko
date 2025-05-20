@@ -11,7 +11,7 @@ namespace OOP_Project_Boyko.RegisteredEventsArgs
         public Rental RegisteredRental { get; }
         public RentalRegisteredEventArgs(Rental Rental)
         {
-            throw new NotImplementedException();
+            RegisteredRental = Rental;
         }
     }
 }

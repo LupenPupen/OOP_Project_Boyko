@@ -12,11 +12,16 @@ namespace OOP_Project_Boyko.TransportRelated
         private double _speed;
         private double _pricePerHour;
 
-        public Transport() { throw new NotImplementedException(); }
+        public Transport() { }
 
         public Transport(string name, TransportType type, string address, TransportStatus status, double speed, double pricePerHour)
         {
-            throw new NotImplementedException();
+            Name = name;
+            Type = type;
+            Address = address;
+            Status = status;
+            Speed = speed;
+            PricePerHour = pricePerHour;
         }
 
         public string Name
@@ -24,17 +29,16 @@ namespace OOP_Project_Boyko.TransportRelated
             get => _name;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Transport name cannot be empty.");
+                _name = value;
             }
         }
 
         public TransportType Type
         {
             get => _type;
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set => _type = value;
         }
 
         public string Address
@@ -42,17 +46,16 @@ namespace OOP_Project_Boyko.TransportRelated
             get => _address;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Transport address cannot be empty.");
+                _address = value;
             }
         }
 
         public TransportStatus Status
         {
             get => _status;
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set => _status = value;
         }
 
         public double Speed
@@ -60,7 +63,9 @@ namespace OOP_Project_Boyko.TransportRelated
             get => _speed;
             set
             {
-                throw new NotImplementedException();
+                if (value < 0)
+                    throw new ArgumentException("Speed cannot be negative.");
+                _speed = value;
             }
         }
 
@@ -69,15 +74,17 @@ namespace OOP_Project_Boyko.TransportRelated
             get => _pricePerHour;
             set
             {
-                throw new NotImplementedException();
+                if (value < 0)
+                    throw new ArgumentException("Price per hour cannot be negative.");
+                _pricePerHour = value;
             }
         }
 
-        public double QualityCoef => throw new NotImplementedException();
+        public double QualityCoef => PricePerHour > 0 ? Speed * 3 / PricePerHour : 0;
 
         public virtual string GetTransportDetails()
         {
-            throw new NotImplementedException();
+            return $"Name: {Name}, Type: {Type}, Address: {Address}, Status: {Status}, Speed: {Speed} km/h, Price: {PricePerHour} UAH/h, Quality Coefficient: {QualityCoef:F2}";
         }
     }
 }

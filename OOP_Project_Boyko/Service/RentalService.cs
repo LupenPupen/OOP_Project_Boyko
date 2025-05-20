@@ -22,12 +22,15 @@ namespace OOP_Project_Boyko.Service
 
         public void AddRental(Rental rental)
         {
-            throw new NotImplementedException();
+            if (rental == null) return;
+            Rental.Add(rental);
+            RentalRegistered?.Invoke(this, new RentalRegisteredEventArgs(rental));
         }
 
         public void RemoveRental(Rental rental)
         {
-            throw new NotImplementedException();
+            if (rental == null) return;
+            Rental.Remove(rental);
         }
     }
 }

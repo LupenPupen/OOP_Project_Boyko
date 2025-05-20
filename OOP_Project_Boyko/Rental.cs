@@ -20,12 +20,27 @@ namespace OOP_Project_Boyko
 
         public Rental()
         {
-            throw new NotImplementedException();
+            _userName = string.Empty;
+            _transportName = string.Empty;
+            _fullName = string.Empty;
+            _phoneNumber = string.Empty;
+            _cardNumber = string.Empty;
+            _expiryDate = string.Empty;
+            _cvv = string.Empty;
         }
 
         public Rental(string userName, string transportName, TransportType transportType, int hours, double totalCost, string fullName, string phoneNumber, string cardNumber, string expiryDate, string cvv)
         {
-            throw new NotImplementedException();
+            UserName = userName;
+            TransportName = transportName;
+            _transportType = transportType;
+            Hours = hours;
+            TotalCost = totalCost;
+            FullName = fullName;
+            PhoneNumber = phoneNumber;
+            CardNumber = cardNumber;
+            ExpiryDate = expiryDate;
+            Cvv = cvv;
         }
 
         public string UserName
@@ -33,7 +48,9 @@ namespace OOP_Project_Boyko
             get => _userName;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Username cannot be empty.");
+                _userName = value;
             }
         }
 
@@ -42,7 +59,9 @@ namespace OOP_Project_Boyko
             get => _transportName;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Transport name cannot be empty.");
+                _transportName = value;
             }
         }
 
@@ -51,7 +70,7 @@ namespace OOP_Project_Boyko
             get => _transportType;
             set
             {
-                throw new NotImplementedException();
+                _transportType = value;
             }
         }
 
@@ -60,7 +79,9 @@ namespace OOP_Project_Boyko
             get => _hours;
             set
             {
-                throw new NotImplementedException();
+                if (value <= 0)
+                    throw new ArgumentException("Rental hours must be greater than zero.");
+                _hours = value;
             }
         }
 
@@ -69,7 +90,9 @@ namespace OOP_Project_Boyko
             get => _totalCost;
             set
             {
-                throw new NotImplementedException();
+                if (value < 0)
+                    throw new ArgumentException("Total cost cannot be negative.");
+                _totalCost = value;
             }
         }
 
@@ -78,7 +101,11 @@ namespace OOP_Project_Boyko
             get => _fullName;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Full name cannot be empty.");
+                if (!Regex.IsMatch(value, @"^[a-zA-Zа-яА-Я\s]+$"))
+                    throw new ArgumentException("Full name must contain only letters and spaces.");
+                _fullName = value;
             }
         }
 
@@ -87,7 +114,11 @@ namespace OOP_Project_Boyko
             get => _phoneNumber;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Phone number cannot be empty.");
+                if (!Regex.IsMatch(value, @"^\+?[\d\s\-]+$"))
+                    throw new ArgumentException("Invalid phone number format.");
+                _phoneNumber = value;
             }
         }
 
@@ -96,7 +127,11 @@ namespace OOP_Project_Boyko
             get => _cardNumber;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Card number cannot be empty.");
+                if (!Regex.IsMatch(value.Replace(" ", "").Replace("-", ""), @"^\d{16}$"))
+                    throw new ArgumentException("Card number must be 16 digits.");
+                _cardNumber = value;
             }
         }
 
@@ -105,7 +140,12 @@ namespace OOP_Project_Boyko
             get => _expiryDate;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Expiry date cannot be empty.");
+                // Check for dd.mm format
+                if (!Regex.IsMatch(value, @"^\d{2}\.\d{2}$"))
+                    throw new ArgumentException("Expiry date must be in dd.mm format.");
+                _expiryDate = value;
             }
         }
 
@@ -114,7 +154,11 @@ namespace OOP_Project_Boyko
             get => _cvv;
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("CVV cannot be empty.");
+                if (!Regex.IsMatch(value, @"^\d{3}$"))
+                    throw new ArgumentException("CVV must be 3 digits.");
+                _cvv = value;
             }
         }
     }
