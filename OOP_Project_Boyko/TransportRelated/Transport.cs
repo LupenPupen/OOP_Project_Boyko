@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Course_Project_Boyko.TransportRelated
+namespace OOP_Project_Boyko.TransportRelated
 {
     public class Transport
     {
@@ -12,16 +12,11 @@ namespace Course_Project_Boyko.TransportRelated
         private double _speed;
         private double _pricePerHour;
 
-        public Transport() { }
+        public Transport() { throw new NotImplementedException(); }
 
         public Transport(string name, TransportType type, string address, TransportStatus status, double speed, double pricePerHour)
         {
-            Name = name;
-            Type = type;
-            Address = address;
-            Status = status;
-            Speed = speed;
-            PricePerHour = pricePerHour;
+            throw new NotImplementedException();
         }
 
         public string Name
@@ -29,14 +24,17 @@ namespace Course_Project_Boyko.TransportRelated
             get => _name;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
         public TransportType Type
         {
             get => _type;
-            set => _type = value;
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public string Address
@@ -44,14 +42,17 @@ namespace Course_Project_Boyko.TransportRelated
             get => _address;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
         public TransportStatus Status
         {
             get => _status;
-            set => _status = value;
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public double Speed
@@ -59,7 +60,7 @@ namespace Course_Project_Boyko.TransportRelated
             get => _speed;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -68,11 +69,11 @@ namespace Course_Project_Boyko.TransportRelated
             get => _pricePerHour;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
-        public double QualityCoef => PricePerHour > 0 ? Speed * 3 / PricePerHour : 0;
+        public double QualityCoef => throw new NotImplementedException();
 
         public virtual string GetTransportDetails()
         {

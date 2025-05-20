@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Course_Project_Boyko.TransportRelated
+namespace OOP_Project_Boyko.TransportRelated
 {
     public enum TransportStatus
     {

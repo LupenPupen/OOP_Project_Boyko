@@ -1,6 +1,6 @@
-﻿using Course_Project_Boyko.Interfaces;
-using Course_Project_Boyko.RegisteredEventsArgs;
-using Course_Project_Boyko.TransportRelated;
+﻿using OOP_Project_Boyko.Interfaces;
+using OOP_Project_Boyko.RegisteredEventsArgs;
+using OOP_Project_Boyko.TransportRelated;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Course_Project_Boyko.Service
+namespace OOP_Project_Boyko.Service
 {
     public class TransportService : ITransportService
     {

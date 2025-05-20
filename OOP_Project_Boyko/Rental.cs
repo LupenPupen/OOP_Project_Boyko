@@ -1,9 +1,9 @@
-﻿using Course_Project_Boyko.TransportRelated;
+﻿using OOP_Project_Boyko.TransportRelated;
 using System;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace Course_Project_Boyko
+namespace OOP_Project_Boyko
 {
     public class Rental
     {
@@ -20,27 +20,12 @@ namespace Course_Project_Boyko
 
         public Rental()
         {
-            _userName = string.Empty;
-            _transportName = string.Empty;
-            _fullName = string.Empty;
-            _phoneNumber = string.Empty;
-            _cardNumber = string.Empty;
-            _expiryDate = string.Empty;
-            _cvv = string.Empty;
+            throw new NotImplementedException();
         }
 
         public Rental(string userName, string transportName, TransportType transportType, int hours, double totalCost, string fullName, string phoneNumber, string cardNumber, string expiryDate, string cvv)
         {
-            UserName = userName;
-            TransportName = transportName;
-            _transportType = transportType;
-            Hours = hours;
-            TotalCost = totalCost;
-            FullName = fullName;
-            PhoneNumber = phoneNumber;
-            CardNumber = cardNumber;
-            ExpiryDate = expiryDate;
-            Cvv = cvv;
+            throw new NotImplementedException();
         }
 
         public string UserName
@@ -48,7 +33,7 @@ namespace Course_Project_Boyko
             get => _userName;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -57,7 +42,7 @@ namespace Course_Project_Boyko
             get => _transportName;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -66,7 +51,7 @@ namespace Course_Project_Boyko
             get => _transportType;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -75,7 +60,7 @@ namespace Course_Project_Boyko
             get => _hours;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -84,7 +69,7 @@ namespace Course_Project_Boyko
             get => _totalCost;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -93,7 +78,7 @@ namespace Course_Project_Boyko
             get => _fullName;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -102,7 +87,7 @@ namespace Course_Project_Boyko
             get => _phoneNumber;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -111,7 +96,7 @@ namespace Course_Project_Boyko
             get => _cardNumber;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -120,7 +105,7 @@ namespace Course_Project_Boyko
             get => _expiryDate;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -129,7 +114,7 @@ namespace Course_Project_Boyko
             get => _cvv;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
     }

@@ -6,11 +6,11 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.IO;
-using Course_Project_Boyko.Interfaces;
-using Course_Project_Boyko.Users;
-using Course_Project_Boyko.TransportRelated;
+using OOP_Project_Boyko.Interfaces;
+using OOP_Project_Boyko.Users;
+using OOP_Project_Boyko.TransportRelated;
 
-namespace Course_Project_Boyko.Data
+namespace OOP_Project_Boyko.Data
 {
     public class FileDataProvider : IDataProvider
     {

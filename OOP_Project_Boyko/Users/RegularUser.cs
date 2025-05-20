@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Course_Project_Boyko.Users
+namespace OOP_Project_Boyko.Users
 {
     public class RegularUser : BaseUser
     {

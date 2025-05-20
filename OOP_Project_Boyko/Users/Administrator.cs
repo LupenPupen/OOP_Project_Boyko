@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Course_Project_Boyko.Users
+namespace OOP_Project_Boyko.Users
 {
     public class Administrator : BaseUser
     {
-        public Administrator(string username, string password) : base(username, password) { }
+        public Administrator(string username, string password) : base(username, password) { throw new NotImplementedException(); }
 
-        public override string UserType => "Admin";
+        public override string UserType => throw new NotImplementedException();
 
         public override string GetGreeting()
         {

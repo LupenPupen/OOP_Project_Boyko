@@ -5,11 +5,11 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Course_Project_Boyko.Interfaces;
-using Course_Project_Boyko.Users;
-using Course_Project_Boyko.TransportRelated;
+using OOP_Project_Boyko.Interfaces;
+using OOP_Project_Boyko.Users;
+using OOP_Project_Boyko.TransportRelated;
 
-namespace Course_Project_Boyko.Data
+namespace OOP_Project_Boyko.Data
 {
     /// <summary>
     /// DataStore отвечает только за хранение коллекций и загрузку/сохранение данных через IDataProvider.

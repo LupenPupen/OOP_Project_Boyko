@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Course_Project_Boyko.Users
+namespace OOP_Project_Boyko.Users
 {
     [JsonDerivedType(typeof(RegularUser), typeDiscriminator: "RegularUser")]
     [JsonDerivedType(typeof(Administrator), typeDiscriminator: "Administrator")]
@@ -10,12 +10,11 @@ namespace Course_Project_Boyko.Users
         private string _username;
         private string _password;
 
-        public BaseUser() { }
+        public BaseUser() { throw new NotImplementedException(); }
 
         public BaseUser(string username, string password)
         {
-            Username = username;
-            Password = password;
+            throw new NotImplementedException();
         }
 
         public string Username
@@ -23,7 +22,7 @@ namespace Course_Project_Boyko.Users
             get => _username;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
@@ -32,7 +31,7 @@ namespace Course_Project_Boyko.Users
             get => _password;
             set
             {
-                
+                throw new NotImplementedException();
             }
         }
 
