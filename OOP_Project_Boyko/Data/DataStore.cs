@@ -15,9 +15,9 @@ namespace OOP_Project_Boyko.Data
     public static class DataStore
     {
         public static IDataProvider DataProvider { get; set; } = new FileDataProvider(
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\users.json",
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\transports.json",
-            "C:\\Users\\Admin\\source\\repos\\Course_Project_Boyko\\Course_Project_Boyko\\JsonData\\rentals.json"
+            "C:\\Users\\Admin\\source\\repos\\OOP_Project_Boyko\\JsonData\\users.json",
+            "C:\\Users\\Admin\\source\\repos\\OOP_Project_Boyko\\JsonData\\transports.json",
+            "C:\\Users\\Admin\\source\\repos\\OOP_Project_Boyko\\JsonData\\rentals.json"
         );
 
         public static ObservableCollection<BaseUser> Users { get; set; } = [];
