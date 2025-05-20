@@ -59,12 +59,19 @@
 ## Скріншоти
 
 Login Menu
+
 ![image](https://github.com/user-attachments/assets/1f86e45b-018a-4bd5-a885-b71085380ebb)
+
 Main Menu
+
 ![image](https://github.com/user-attachments/assets/fac0f4b7-0e0b-4eba-9e7a-f73acfa88c9f)
+
 Rent Menu
+
 ![image](https://github.com/user-attachments/assets/657133ab-3839-482b-ae22-a28bb34ca121)
+
 Admin Menu
+
 ![image](https://github.com/user-attachments/assets/5cd350ae-a80c-462f-b4a0-c09afe9fbb3d)
 
 ## Автор
