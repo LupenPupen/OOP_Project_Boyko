@@ -1,0 +1,32 @@
+﻿<Window x:Class="OOP_Project_Boyko.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project_Boyko"
+        mc:Ignorable="d"
+        Title="Login/Signup" Height="576" Width="720" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center">
+            <Label Content="Name:"/>
+            <TextBox x:Name="txtUsername"
+                     Margin="0,0,0,10"/>
+            <Label Content="Pin:"/>
+            <PasswordBox x:Name="txtPassword"
+                         Margin="0,0,0,20"/>
+
+            <Button Content="Sign in"
+                    Click="Login_Click"
+                    Margin="0,0,0,10"/>
+
+            <Button Content="Sign up"
+                    Click="Register_Click"
+                    Margin="0,0,0,10"/>
+
+            <Label x:Name="lblMessage"
+                   Foreground="Red"
+                   Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -12,23 +12,16 @@ using OOP_Project_Boyko.TransportRelated;
 
 namespace OOP_Project_Boyko.Data
 {
-    public class FileDataProvider : IDataProvider
+    public class FileDataProvider(string usersFile, string transportsFile, string rentalsFile) : IDataProvider
     {
-        private readonly string usersFile;
-        private readonly string transportsFile;
-        private readonly string rentalsFile;
-
-        public FileDataProvider(string usersFile, string transportsFile, string rentalsFile)
-        {
-            this.usersFile = usersFile;
-            this.transportsFile = transportsFile;
-            this.rentalsFile = rentalsFile;
-        }
+        private readonly string usersFile = usersFile;
+        private readonly string transportsFile = transportsFile;
+        private readonly string rentalsFile = rentalsFile;
 
         public ObservableCollection<BaseUser> LoadUsers()
         {
             if (!File.Exists(usersFile))
-                return new ObservableCollection<BaseUser>();
+                return [];
 
             var json = File.ReadAllText(usersFile);
             var options = new JsonSerializerOptions
@@ -37,7 +30,7 @@ namespace OOP_Project_Boyko.Data
                 Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
             };
             return JsonSerializer.Deserialize<ObservableCollection<BaseUser>>(json, options)
-                   ?? new ObservableCollection<BaseUser>();
+                   ?? [];
         }
 
         public void SaveUsers(ObservableCollection<BaseUser> users)
@@ -54,7 +47,7 @@ namespace OOP_Project_Boyko.Data
         public ObservableCollection<Transport> LoadTransports()
         {
             if (!File.Exists(transportsFile))
-                return new ObservableCollection<Transport>();
+                return [];
 
             var json = File.ReadAllText(transportsFile);
             var options = new JsonSerializerOptions
@@ -63,7 +56,7 @@ namespace OOP_Project_Boyko.Data
                 Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
             };
             return JsonSerializer.Deserialize<ObservableCollection<Transport>>(json, options)
-                   ?? new ObservableCollection<Transport>();
+                   ?? [];
         }
 
         public void SaveTransports(ObservableCollection<Transport> transports)
@@ -80,7 +73,7 @@ namespace OOP_Project_Boyko.Data
         public ObservableCollection<Rental> LoadRentals()
         {
             if (!File.Exists(rentalsFile))
-                return new ObservableCollection<Rental>();
+                return [];
 
             var json = File.ReadAllText(rentalsFile);
             var options = new JsonSerializerOptions
@@ -89,7 +82,7 @@ namespace OOP_Project_Boyko.Data
                 Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() }
             };
             return JsonSerializer.Deserialize<ObservableCollection<Rental>>(json, options)
-                   ?? new ObservableCollection<Rental>();
+                   ?? [];
         }
 
         public void SaveRentals(ObservableCollection<Rental> rentals)
