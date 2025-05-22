@@ -1,6 +1,6 @@
 [
   {
-    "UserName": "user1",
+    "UserName": "user",
     "TransportName": "Speedster mk1 1989",
     "Type": "Bicycle",
     "Hours": 3,
@@ -10,5 +10,17 @@
     "CardNumber": "1234123412341234",
     "ExpiryDate": "01.01",
     "Cvv": "123"
+  },
+  {
+    "UserName": "admin",
+    "TransportName": "Lightning m2004",
+    "Type": "Bicycle",
+    "Hours": 5,
+    "TotalCost": 400,
+    "FullName": "My name",
+    "PhoneNumber": "\u002B380992409192",
+    "CardNumber": "1234123412341234",
+    "ExpiryDate": "02.04",
+    "Cvv": "321"
   }
 ]

@@ -10,11 +10,5 @@
     "UserType": "Regular user",
     "Username": "user",
     "Password": "user"
-  },
-  {
-    "$type": "RegularUser",
-    "UserType": "Regular user",
-    "Username": "user1",
-    "Password": "user1"
   }
 ]

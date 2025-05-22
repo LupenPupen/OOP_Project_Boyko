@@ -2,8 +2,8 @@
   {
     "Name": "Lightning m2004",
     "Type": "Bicycle",
-    "Address": "Kievskiy Pr., bld. 16",
-    "Status": "Free",
+    "Address": "Kievskiy Pr., bld. 1",
+    "Status": "Rented",
     "Speed": 30,
     "PricePerHour": 80,
     "QualityCoef": 1.125
@@ -11,7 +11,7 @@
   {
     "Name": "Speedster mk1 1989",
     "Type": "Bicycle",
-    "Address": "Kievskiy Pr., bld. 16",
+    "Address": "Lvivsky Pr., bld. 12",
     "Status": "Rented",
     "Speed": 25,
     "PricePerHour": 60,
@@ -20,7 +20,7 @@
   {
     "Name": "Toursor X14",
     "Type": "Scooter",
-    "Address": "Kievskiy Pr., bld. 16",
+    "Address": "Ledyanuy Pr., bld. 26",
     "Status": "Free",
     "Speed": 20,
     "PricePerHour": 60,
@@ -29,7 +29,7 @@
   {
     "Name": "Maraton Pro",
     "Type": "Scooter",
-    "Address": "Kievskiy Pr., bld. 16",
+    "Address": "Jonatan Pr., bld. 122",
     "Status": "Free",
     "Speed": 25,
     "PricePerHour": 50,
